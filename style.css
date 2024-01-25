@@ -1,0 +1,147 @@
+:root{
+  /* (main background) */
+  --veryDarkBlue: hsl(233, 47%, 7%);
+  /* (card background) */
+  --darkDesaturatedBlue: hsl(244, 38%, 16%);
+  /* (accent) */
+  --softViolet: hsl(277, 64%, 61%);
+  
+
+  /* (main heading, stats) */
+  --white: hsl(0, 0%, 100%);
+  /* (main paragraph) */
+  --white-p: hsla(0, 0%, 100%, 0.75);
+  /* (stat headings) */
+  --white-h: hsla(0, 0%, 100%, 0.6);
+
+  --fs: 15px;
+  --ff-Inter:'Inter', sans-serif;
+  --ff-LexendDeca:'Lexend Deca', sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700; 
+
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+
+
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background-color: var(--veryDarkBlue);
+  color: var(--white);
+  font-size: var(--fs);
+  font-family: var(--ff-Inter);
+   
+}
+
+.card{
+
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  background-color: var(--darkDesaturatedBlue);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 24px;
+  
+  @media (max-width: 1023px) {
+    grid-template-columns: 1fr;
+    max-width: 375px;
+    text-align: center;
+  }
+}
+
+.card__img{
+
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  mix-blend-mode: multiply;
+  opacity: .8;
+
+  
+}
+
+.card__img-container{
+
+  background-color: var(--softViolet);
+
+}
+
+.card__info{
+
+  padding: 0 96px 0 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+
+  @media (max-width:1023px) {
+    padding: 32px;
+    order: 2;
+  }
+
+}
+
+.card__title{
+
+  font-size: 32px;
+  
+  span {
+    color: var(--softViolet);
+  }
+  
+  @media (max-width:1023px) {
+    font-size: 28px;
+  }
+}
+
+.card__text{
+
+  color: var(--white-p);
+  line-height: 1.8;
+
+}
+
+.card__stats{
+
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  @media (max-width:1023px) {
+    flex-direction: column;
+    gap: 24px;
+    margin: 0;
+    
+  }
+  
+} 
+
+.card__stats-item-number{
+
+   font-size: 24px;
+   font-weight: var(--fw-bold);
+}
+
+.card__stats-item-text{
+
+    color: var(--white-h);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    font-family: var(--ff-LexendDeca);
+    margin-top: 4px;
+}
+
+
+ 
